@@ -6,7 +6,6 @@ import numpy as np
 N = 64                  # Size of the 2D CA
 n_iter = 30             # Number of iterations
 n_neighbour = 6         # Number of connected neighbours per node
-scatter_marker = "."    # Plot marker style
 marker_style = dict(color='black', linestyle=':', marker='o',
                     markersize=3, markerfacecoloralt='gray')
 
