@@ -7,7 +7,7 @@ N = 513         # Size of the 1D CA
 n_iter = 512    # Number of iterations
 
 image = np.zeros((n_iter, N), dtype=np.int)             # Initialise the lattice to white
-image[0, round(N/2)] = 1                                # But set the central node to black
+image[0, N//2] = 1                                # But set the central node to black
 
 # Iteration loop (each line)
 for iterate in range(1, n_iter):
