@@ -2,11 +2,12 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.colors as col
 
 N = 513         # Size of the 1D CA
 n_iter = 512    # Number of iterations
 
-image = np.zeros((n_iter, N), dtype=np.int)             # Initialise the lattice to white
+image = np.zeros((n_iter, N), dtype=np.int)       # Initialise the lattice to white
 image[0, N//2] = 1                                # But set the central node to black
 
 # Iteration loop (each line)
@@ -24,5 +25,6 @@ for iterate in range(1, n_iter):
             # Move the last value to the start of the next row
             image[iterate+1, N-1] = image[iterate, 1]
 
-plt.imshow(image, interpolation="nearest")
+# Use a colormap to map 0 to white and 1 to black
+plt.imshow(image, interpolation="nearest", cmap=col.ListedColormap([(1, 1, 1), (0, 0, 0)]))
 plt.show()
